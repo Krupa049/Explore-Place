@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import CategoryItem from './CategoryItem'
 
@@ -31,9 +31,9 @@ export default function CategoryList() {
         data={CategoryList}
         horizontal={true}
         renderItem={({item})=>(
-          <View>
+          <TouchableOpacity onPress={()=>console.log(item.name)}>
             <CategoryItem category={item} />
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
